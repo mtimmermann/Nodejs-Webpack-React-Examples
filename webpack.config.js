@@ -6,7 +6,7 @@
 /* eslint-disable global-require */
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const Merge = require('webpack-merge');
 const CommonConfig = require('./webpack.common.config.js');

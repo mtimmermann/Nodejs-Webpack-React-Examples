@@ -6,7 +6,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -75,14 +75,19 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(['dist']),
-    // new CopyWebpackPlugin([
-    //   { from: './manifest.json' },
-    //   { from: './manifest.webapp' },
-    //   { from: './robots.txt' },
-    //   { from: './favicon.ico' },
-    //   { from: './img/**/*', to: './' }
-    // ]),
+    new CleanWebpackPlugin(['dist'],
+      {
+        verbose: true
+        // exclude: ['img/**/*'] // <- exclude does not work
+      }
+    ),
+    new CopyWebpackPlugin([
+      { from: './manifest.json' },
+      { from: './manifest.webapp' },
+      { from: './robots.txt' },
+      { from: './favicon.ico' },
+      { from: './img/**/*', to: './' }
+    ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
