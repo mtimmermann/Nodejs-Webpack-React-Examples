@@ -2,11 +2,17 @@
 
 Static website boilterplate project template built using Webpack.
 
+##### Server
+* Node.js
+* Express 4
+
+##### Client JS
 * Webpack
 	* ESLint
- 	* Browsersync live client source to browser reloading
-* React
+* React 15.6
 * ES6
+
+#### Client Styles
 * Bootstrap
 * Font Awesome
 * Sass

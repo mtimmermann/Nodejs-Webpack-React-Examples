@@ -3,8 +3,7 @@ import '../js/imports';
 // import React, { Component } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './common/home.component';
-import AboutModal from './common/modal.about.component';
+import Home from './common/home';
 
 window.app = window.app || {};
 window.app = $.extend({}, window.app,
@@ -17,12 +16,6 @@ window.app = $.extend({}, window.app,
 
       init: () => {
         ReactDOM.render(<Home />, document.querySelector('#container-main'));
-
-        ReactDOM.render(
-          <div>
-            <AboutModal />
-          </div>
-          , document.querySelector('#container-modals'));
       }
 
     };
