@@ -4,7 +4,7 @@ import '../js/imports';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './common/home.component';
-import AboutModal from './common/modal.about.component';
+//import AboutModal from './common/modal.about.component';
 
 window.app = window.app || {};
 window.app = $.extend({}, window.app,
@@ -18,15 +18,18 @@ window.app = $.extend({}, window.app,
       init: () => {
         ReactDOM.render(<Home />, document.querySelector('#container-main'));
 
-        ReactDOM.render(
-          <div>
-            <AboutModal />
-          </div>
-          , document.querySelector('#container-modals'));
+        // ReactDOM.render(
+        //   <div>
+        //     <AboutModal />
+        //   </div>
+        //   , document.querySelector('#container-modals'));
       }
 
     };
   }())
 );
 
-window.app.init();
+
+$(() => {
+  window.app.init();
+});

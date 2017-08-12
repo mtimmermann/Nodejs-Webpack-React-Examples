@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-react-nodejs-webpack",
+  "name": "boilerplate-webpack-react-nodejs",
   "version": "1.0.0",
   "description": "Boiler plate for React, ES6 and Bootstrap, built using Webpack",
   "main": "bundle.js",

@@ -75,14 +75,14 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new CopyWebpackPlugin([
-      { from: './manifest.json' },
-      { from: './manifest.webapp' },
-      { from: './robots.txt' },
-      { from: './favicon.ico' },
-      { from: './img/**/*', to: './' }
-    ]),
+    // new CleanWebpackPlugin(['dist']),
+    // new CopyWebpackPlugin([
+    //   { from: './manifest.json' },
+    //   { from: './manifest.webapp' },
+    //   { from: './robots.txt' },
+    //   { from: './favicon.ico' },
+    //   { from: './img/**/*', to: './' }
+    // ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
