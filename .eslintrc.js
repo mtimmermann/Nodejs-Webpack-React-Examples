@@ -61,6 +61,9 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md
     'import/first': ['off'],
 
+    'import/newline-after-import': ['off'],
+    'space-before-function-paren': ['off'],
+
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
   }
 };
