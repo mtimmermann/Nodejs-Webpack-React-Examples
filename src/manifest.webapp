@@ -1,0 +1,25 @@
+{
+	"version": "1.0.0",
+	"name": "Boilerplate React Nodejs Webpack",
+	"launch_path": "/index.html",
+	"description": "Boiler plate for React, ES6 and Bootstrap, built using Webpack",
+	"icons": {
+		"128": "/img/ico/icon-128x128.png"
+	},
+	"developer": {
+		"name": "",
+		"url": ""
+	},
+	"installs_allowed_from": [
+		"*"
+	],
+	"default_locale": "en",
+	"permissions": {
+	},
+	"locales": {
+		"en": {
+			"name": "Boilerplate React Nodejs Webpack",
+			"description": "Boiler plate, ES6 and Bootstrap, built using Webpack"
+		}
+	}
+}
