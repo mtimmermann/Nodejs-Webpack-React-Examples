@@ -14,7 +14,7 @@ class NavBar extends React.Component {
               <span className="icon-bar" />
               <span className="icon-bar" />
             </button>
-            <a className="navbar-brand" href="#">React Node.js Webpack</a>
+            <NavLink to="/" className="navbar-brand">React Node.js Webpack</NavLink>
           </div>
 
           {/* Collect the nav links, forms, and other content for toggling */}
