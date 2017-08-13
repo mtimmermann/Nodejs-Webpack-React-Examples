@@ -10,7 +10,7 @@ Static website boilterplate project template built using Webpack.
 * Webpack
 	* ESLint
 * React 15.6
-	* React Router 4
+	* React Router (react-router-dom) 4
 * ES6
 
 #### Client Styles
@@ -20,14 +20,20 @@ Static website boilterplate project template built using Webpack.
 
 ----
 
+Build the client files dist folder 
+```sh
+# For dev ->
+npm run build:dev
+# or to watch and build on the fly
+npm run watch
+
+# For prod->
+npm run build:prod
+```
+
 Start development
 ```sh
 npm run start
-```
-
-Build the dist folder
-```sh
-npm run
 ```
 
 ## License
