@@ -12,8 +12,8 @@
     "build:dev": "webpack",
     "build:prod": "webpack --config ./webpack.prod.config.js",
     "start:dev": "nodemon app.js",
-    "start:": "if-env NODE_ENV=production && npm run build:prod && node app.js || npm run start:dev",
-    "start2": "node app.js"
+    "start1:": "if-env NODE_ENV=production && npm run build:prod && node app.js || npm run start:dev",
+    "start": "node app.js"
   },
   "keywords": [
     "webpack",
