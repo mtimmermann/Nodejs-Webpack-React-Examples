@@ -222,3 +222,6 @@ $(() => {
 });
 
 export default StockWatch;
+
+// Make the Highcharts object to window object, for the highcharts export.js
+window.Highcharts = Highcharts;
