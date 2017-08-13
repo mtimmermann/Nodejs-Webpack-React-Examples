@@ -6,12 +6,13 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.resolve('./src'),
-  entry: './jsx/main.jsx',
+  // entry: './jsx/main.jsx',
+  entry: './jsx/index.jsx',
   output: {
     path: path.resolve('./dist/'),
     filename: 'js/main.js',
@@ -92,13 +93,13 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    // new HtmlWebpackPlugin({
-    //   template: './index.html',
+    new HtmlWebpackPlugin({
+      template: './index.html',
 
-    //   // true is default. True will automatically inject
-    //   // the built.js script into the html
-    //   inject: false
-    // }),
+      // true is default. True will automatically inject
+      // the built.js script into the html
+      inject: false
+    }),
     new ExtractTextPlugin({
       filename: 'css/style.css',
       allChunks: true

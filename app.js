@@ -30,16 +30,24 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, '/dist')));
 
 // Define routes
-app.use('/', index);
+//app.use('/', index);
 app.use('/users', users);
 app.use('/api', api);
 
+
 // Catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
+
+// Single page app method for 404s, return the static html file
+// Handles all routes so you do not get a not found error
+app.get('*', function (req, res, next) {
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
+
 
 // Error handler
 app.use(function(err, req, res, next) {
