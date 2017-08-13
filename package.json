@@ -13,7 +13,7 @@
     "build:prod": "webpack --config ./webpack.prod.config.js",
     "start:dev": "nodemon app.js",
     "start1:": "if-env NODE_ENV=production && npm run build:prod && npm run start:prod || npm run start:dev",
-    "start:prod": "node app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "webpack",
