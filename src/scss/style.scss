@@ -37,3 +37,78 @@ body {
 		}
 	}
 }
+
+#stocks-section {
+  &.container {
+    background-color: #3e3e40;
+  }
+
+  .stocks-container {
+    padding-top: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    .stock-block {
+      border: 1px solid #bbb;
+      height: 130px;
+      border-left-width: 5px;
+      background-color: #fff;
+
+      h3 {
+        margin-top: 10px;
+      }
+
+      .name {
+        color: #A0A0A2;
+      }
+
+      @media (min-width: 1200px) {
+        padding: 10px;
+        margin-left: 19px;
+        margin-right: 19px;
+        margin-bottom: 10px;
+
+        &:first-child, &:nth-child(4),  &:nth-child(3n+4){
+          margin-left: 0;
+        }
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+        &:nth-child(2), &:nth-child(3n+2) {
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+
+        &.col-md-4 {
+          width: 31%;
+        }
+      }
+
+      @media (max-width: 767px) {
+        margin-bottom: 10px;
+      }
+
+      &.stock-new {
+        border-color: #5cb85c;
+
+        .input-group-btn {
+          .btn {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+          }
+        }
+
+        .error {
+          padding-top: 5px;
+          color: #c7254e;
+        }
+      }
+
+      &:hover:not(.stock-new) {
+        border-color: tomato;
+      }
+    }
+  }
+}

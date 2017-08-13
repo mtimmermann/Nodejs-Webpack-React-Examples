@@ -20,6 +20,7 @@ class NavBar extends React.Component {
           {/* Collect the nav links, forms, and other content for toggling */}
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
+              <li><NavLink to="/stock-watch" activeClassName="active">Stock Watch</NavLink></li>
               <li><NavLink to="/markdown-edit" activeClassName="active">Markdown Edit</NavLink></li>
               <li><NavLink to="/page1" activeClassName="active">Page 1</NavLink></li>
               <li><NavLink to="/page2" activeClassName="active">Page 2</NavLink></li>
