@@ -30,6 +30,8 @@ module.exports = {
     semi: ['error', 'always'],
     'no-unused-vars': ['warn'],
     'no-console': 0,
+    'prefer-template': ['off'],
+    'space-infix-ops': ['off'],
 
     //'import/extensions': ['.jsx'],
 
