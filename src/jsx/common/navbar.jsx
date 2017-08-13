@@ -22,6 +22,7 @@ class NavBar extends React.Component {
             <ul className="nav navbar-nav">
               <li><NavLink to="/page1" activeClassName="active">Page 1</NavLink></li>
               <li><NavLink to="/page2" activeClassName="active">Page 2</NavLink></li>
+              <li><a href="/example">Example Pug Template</a></li>
               <li className="dropdown">
                 <a className="dropdown-toggle" href="#" data-toggle="dropdown">
                   About
