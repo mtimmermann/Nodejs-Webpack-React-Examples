@@ -30,7 +30,7 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, '/dist')));
 
 // Define routes
-//app.use('/', index);
+app.use('/', index);
 app.use('/users', users);
 app.use('/api', api);
 
