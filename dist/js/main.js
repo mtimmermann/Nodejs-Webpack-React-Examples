@@ -38608,6 +38608,10 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(11);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _marked = __webpack_require__(233);
 
 var _marked2 = _interopRequireDefault(_marked);
@@ -38621,6 +38625,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /* eslint-disable react/no-multi-comp */
+
 var Editor = function (_React$Component) {
   _inherits(Editor, _React$Component);
 
@@ -38644,6 +38649,11 @@ var Editor = function (_React$Component) {
   return Editor;
 }(_react2.default.Component);
 
+Editor.propTypes = {
+  editInput: _propTypes2.default.string.isRequired,
+  update: _propTypes2.default.func.isRequired
+};
+
 var EditorInput = function (_React$Component2) {
   _inherits(EditorInput, _React$Component2);
 
@@ -38659,18 +38669,20 @@ var EditorInput = function (_React$Component2) {
   _createClass(EditorInput, [{
     key: 'update',
     value: function update() {
-      //const val = this.refs.inputValue.getDOMNode().value;
-      var val = this.refs.inputValue.value;
-      this.props.update(val);
+      this.props.update(this.textArea.value);
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       return _react2.default.createElement('textarea', {
         className: 'form-control',
         type: 'text',
         rows: '30',
-        ref: 'inputValue',
+        ref: function ref(el) {
+          _this3.textArea = el;
+        },
         value: this.props.value,
         onChange: this.update });
     }
@@ -38679,12 +38691,9 @@ var EditorInput = function (_React$Component2) {
   return EditorInput;
 }(_react2.default.Component);
 
-//TODO: https://fb.me/prop-types-docs
-
-
 EditorInput.propTypes = {
-  update: _react2.default.PropTypes.func.isRequired,
-  value: _react2.default.PropTypes.string.isRequired
+  update: _propTypes2.default.func.isRequired,
+  value: _propTypes2.default.string.isRequired
 };
 
 /* eslint-disable react/no-danger */
@@ -38713,8 +38722,8 @@ var Renderer = function (_React$Component3) {
 }(_react2.default.Component);
 
 Renderer.propTypes = {
-  renderMarkDown: _react2.default.PropTypes.func.isRequired,
-  rawInput: _react2.default.PropTypes.string.isRequired
+  renderMarkDown: _propTypes2.default.func.isRequired,
+  rawInput: _propTypes2.default.string.isRequired
 };
 
 var MarkdownEdit = function (_React$Component4) {
@@ -38723,15 +38732,14 @@ var MarkdownEdit = function (_React$Component4) {
   function MarkdownEdit(props) {
     _classCallCheck(this, MarkdownEdit);
 
-    var _this4 = _possibleConstructorReturn(this, (MarkdownEdit.__proto__ || Object.getPrototypeOf(MarkdownEdit)).call(this, props));
+    var _this5 = _possibleConstructorReturn(this, (MarkdownEdit.__proto__ || Object.getPrototypeOf(MarkdownEdit)).call(this, props));
 
-    _this4.state = {
-      //value: this.getInitialVal()
-      value: '# Header 1\n' + '## Header 2\n' + '### Header 3\n' + '#### Header 4\n\n' + '***\n' + ' * Bullet 1\n' + ' * Bullet 2\n' + ' + Bullet 3\n' + '***\n\n' + '[Inline link with title](https://www.google.com "Google\'s Homepage")\n\n' + '[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet on GitHub)\n\n' + '---\n\n' + '> Set Aside Markup\n\n' + '***\n\n' + '`code`\n\n' + '***\n\n' + '```\n' + 'const Editor = React.createClass({\n' + '  render: function() {\n' + '    return (\n' + '      <div className="col-xs-12 col-sm-12 col-md-6">\n' + '        <EditorInput \n' + '          value={this.props.editInput}\n' + '          update={this.props.update} />\n' + '      </div>\n' + '```\n'
+    _this5.state = {
+      value: '# Header 1\n' + '## Header 2\n' + '### Header 3\n' + '#### Header 4\n\n' + '***\n' + ' * Bullet 1\n' + ' * Bullet 2\n' + ' + Bullet 3\n' + '***\n\n' + '[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet on GitHub)\n\n' + '[Inline link with title](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet")\n\n' + '---\n\n' + '> Set Aside Markup\n\n' + '***\n\n' + '`code`\n\n' + '***\n\n' + '```\n' + 'const Editor = React.createClass({\n' + '  render: function() {\n' + '    return (\n' + '      <div className="col-xs-12 col-sm-12 col-md-6">\n' + '        <EditorInput \n' + '          value={this.props.editInput}\n' + '          update={this.props.update} />\n' + '      </div>\n' + '```\n'
     };
 
-    _this4.update = _this4.update.bind(_this4);
-    return _this4;
+    _this5.update = _this5.update.bind(_this5);
+    return _this5;
   }
 
   _createClass(MarkdownEdit, [{

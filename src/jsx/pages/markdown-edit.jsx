@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import marked from 'marked';
 
 /* eslint-disable react/no-multi-comp */
+
 class Editor extends React.Component {
   render() {
     return (
@@ -11,6 +13,11 @@ class Editor extends React.Component {
     );
   }
 }
+Editor.propTypes = {
+  editInput: PropTypes.string.isRequired,
+  update: PropTypes.func.isRequired
+};
+
 
 class EditorInput extends React.Component {
   constructor(props) {
@@ -20,9 +27,7 @@ class EditorInput extends React.Component {
   }
 
   update() {
-    //const val = this.refs.inputValue.getDOMNode().value;
-    const val = this.refs.inputValue.value;
-    this.props.update(val);
+    this.props.update(this.textArea.value);
   }
 
   render() {
@@ -31,17 +36,15 @@ class EditorInput extends React.Component {
         className="form-control"
         type="text"
         rows="30"
-        ref="inputValue"
+        ref={(el) => { this.textArea = el; }}
         value={this.props.value}
         onChange={this.update} />
     );
   }
 }
-
-//TODO: https://fb.me/prop-types-docs
 EditorInput.propTypes = {
-  update: React.PropTypes.func.isRequired,
-  value: React.PropTypes.string.isRequired
+  update: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
 };
 
 /* eslint-disable react/no-danger */
@@ -54,10 +57,9 @@ class Renderer extends React.Component {
     );
   }
 }
-
 Renderer.propTypes = {
-  renderMarkDown: React.PropTypes.func.isRequired,
-  rawInput: React.PropTypes.string.isRequired
+  renderMarkDown: PropTypes.func.isRequired,
+  rawInput: PropTypes.string.isRequired
 };
 
 
@@ -66,7 +68,6 @@ class MarkdownEdit extends React.Component {
     super(props);
 
     this.state = {
-      //value: this.getInitialVal()
       value:
         '# Header 1\n' +
         '## Header 2\n' +
@@ -77,8 +78,8 @@ class MarkdownEdit extends React.Component {
         ' * Bullet 2\n' +
         ' + Bullet 3\n' +
         '***\n\n' +
-        '[Inline link with title](https://www.google.com "Google\'s Homepage")\n\n' +
         '[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet on GitHub)\n\n' +
+        '[Inline link with title](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown Cheatsheet")\n\n' +
         '---\n\n' +
         '> Set Aside Markup\n\n' +
         '***\n\n' +
