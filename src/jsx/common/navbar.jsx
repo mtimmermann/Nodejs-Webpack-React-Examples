@@ -14,12 +14,13 @@ class NavBar extends React.Component {
               <span className="icon-bar" />
               <span className="icon-bar" />
             </button>
-            <a className="navbar-brand" href="#">React Node.js Webpack</a>
+            <NavLink to="/" className="navbar-brand">React Node.js Webpack</NavLink>
           </div>
 
           {/* Collect the nav links, forms, and other content for toggling */}
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
+              <li><NavLink to="/markdown-edit" activeClassName="active">Markdown Edit</NavLink></li>
               <li><NavLink to="/page1" activeClassName="active">Page 1</NavLink></li>
               <li><NavLink to="/page2" activeClassName="active">Page 2</NavLink></li>
               <li><a href="/example">Example Pug Template</a></li>

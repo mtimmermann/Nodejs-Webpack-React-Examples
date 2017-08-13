@@ -36,6 +36,7 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
     'react/prefer-stateless-function': [0, { 'ignorePureComponents': true }],
     'react/jsx-filename-extension': [1, { 'extensions': ['.jsx'] }],
+    'react/jsx-closing-bracket-location': [1, 'after-props'],
 
     'func-names': ['error', 'never'],
 
