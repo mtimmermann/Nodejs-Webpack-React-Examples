@@ -61,7 +61,5 @@ app.use(function(err, req, res, next) {
 });
 
 
-console.log('port: '+ port);
-
 app.listen(port);
 console.log('Server started on port ' + port);
