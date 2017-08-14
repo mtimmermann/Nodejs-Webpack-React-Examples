@@ -31,7 +31,7 @@ npm run watch
 npm run build:prod
 ```
 
-Start development
+Start the server
 ```sh
 npm run start
 ```
