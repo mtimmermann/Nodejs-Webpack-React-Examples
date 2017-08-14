@@ -31,10 +31,10 @@ class NavBar extends React.Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="" data-toggle="modal" data-target="#modalAbout">About: React Node.js Webpack</a>
+                    <a href="" data-toggle="modal" data-target="#modal-about">About: React Node.js Webpack</a>
                   </li>
                   <li>
-                    <a href="https://github.com/mtimmermann/Boilerplate-Webpack-React-Nodejs">Source Code on GitHub</a>
+                    <a href="https://github.com/mtimmermann/Nodejs-Webpack-React-Examples" target="_blank" rel="noopener noreferrer">Source Code on GitHub</a>
                   </li>
                 </ul>
               </li>
