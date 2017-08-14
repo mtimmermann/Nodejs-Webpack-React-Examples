@@ -31,9 +31,21 @@ npm run watch
 npm run build:prod
 ```
 
+----
+##### Required
+
+An api key from Quandl is required for api stock data. The api key is free from  [Quandl](https://www.quandl.com/tools/api)
+
+----
+
+
 Start the server
 ```sh
-npm run start
+# Add a Qunadl api key to QUANDL_API_KEY= in 1.run-debug.sh
+./1.run-dev-sh
+
+# or
+QUANDL_API_KEY={key} node app.js
 ```
 
 ## License
