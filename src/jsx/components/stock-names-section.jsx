@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import appChart from '../../js/stock-watch/chart-stock-app';
 
 /* eslint-disable react/no-multi-comp */
 
@@ -11,7 +12,7 @@ class StockBlock extends React.Component {
   }
 
   handleClick(e) { // eslint-disable-line no-unused-vars
-    window.app.chart.delStockItem(this.props.code);
+    appChart.delStockItem(this.props.code);
     this.props.update(); // Re-render parent
   }
 
@@ -53,7 +54,7 @@ class StockAddForm extends React.Component {
 
     e.preventDefault();
 
-    window.app.chart.addStockItem(this.state.code, (err) => {
+    appChart.addStockItem(this.state.code, (err) => {
       if (err) self.setState({ isError: true });
       else {
         self.props.update(); // Re-render parent
@@ -110,13 +111,13 @@ class StockNamesSection extends React.Component {
     this.update = this.update.bind(this);
 
     this.state = {
-      stockList: window.app.chart.getStockList()
+      stockList: appChart.getStockList()
     };
   }
 
   update() {
     // setState will set off a re-render
-    this.setState({ stockList: window.app.chart.getStockList() });
+    this.setState({ stockList: appChart.getStockList() });
   }
 
   render() {

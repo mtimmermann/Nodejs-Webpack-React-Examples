@@ -187,7 +187,7 @@ class Chat extends React.Component {
 
     const messageRows = [];
     this.state.messages.forEach((msg) => {
-      messageRows.push(<MessageRow messageData={msg} />);
+      messageRows.push(<MessageRow key={msg.date} messageData={msg} />);
     });
 
     return (
