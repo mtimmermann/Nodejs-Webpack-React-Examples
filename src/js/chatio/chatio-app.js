@@ -31,6 +31,14 @@ const chatioApp =
     });
   }
 
+  function getName(callback) {
+    socket.emit('GetName');
+    socket.on('GetName', (name) => {
+      socket.emit('UserListData');
+      callback(name);
+    });
+  }
+
   function addName(name, callback) {
     if (!name) {
       callback(false /* isSuccess */);
@@ -119,9 +127,16 @@ const chatioApp =
      * Initialize the app data and app stock chart
      */
     init: function() {
-      modals.chooseName.show();
-      utils.timeout(1000, () => {
-        $('input[name="name"]').focus();
+
+      getName((name) => {
+        if (name) {
+          userName = name;
+        } else {
+          modals.chooseName.show();
+          utils.timeout(1000, () => {
+            $('input[name="name"]').focus();
+          });
+        }
       });
 
       $('#chat-box').slimScroll({ height: '400px' });
@@ -146,8 +161,5 @@ const chatioApp =
 
 }());
 
-// $(() => {
-//   chatioApp.init();
-// });
 
 export default chatioApp;

@@ -124,11 +124,14 @@ class MessageForm extends React.Component {
   }
 }
 
+/* eslint-disable no-underscore-dangle */
 class Chat extends React.Component {
   constructor(props) {
     super(props);
 
     this.addMessage = this.addMessage.bind(this);
+
+    this._isMounted = false;
 
     this.state = {
       messages: [],
@@ -148,6 +151,7 @@ class Chat extends React.Component {
     this.userDataToke = PubSub.subscribe('UserListData', this.userDataUpdate.bind(this));
   }
   componentDidMount() {
+    this._isMounted = true;
     chatioApp.init();
   }
   componentDidUpdate() {
@@ -158,6 +162,7 @@ class Chat extends React.Component {
     PubSub.publish('ChatBoxRendered', {});
   }
   componentWillUnmount() {
+    this._isMounted = false;
     PubSub.unsubscribe(this.messageToken);
   }
 
@@ -168,12 +173,14 @@ class Chat extends React.Component {
 
   // External pubsub user data update recieved here
   userDataUpdate(msg, data) {
-    this.setState({
-      userListData: {
-        curUserName: data.curUserName,
-        list: data.list
-      }
-    });
+    if (this._isMounted) {
+      this.setState({
+        userListData: {
+          curUserName: data.curUserName,
+          list: data.list
+        }
+      });
+    }
   }
 
   addMessage(data) {

@@ -18,6 +18,18 @@ module.exports = function(server) {
 	    }
 	  });
 
+	  socket.on('GetName', function() {
+	  	if (hasName(socket)) {
+	  		socket.emit('GetName', socket.name);
+	  	} else {
+	  		socket.emit('GetName', null);
+	  	}
+	  });
+
+	  socket.on('UserListData', function() {
+	  	sendUserListData();
+	  });
+
 	  socket.on('SetName', function(name) { // Assign name to user
 	    if (userList.indexOf(name) === -1) { // Test if name is taken
 	      userList.push(name);
