@@ -4,8 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/home';
 import MarkdownEdit from '../pages/markdown-edit';
 import StockWatch from '../pages/stock-watch';
-import Page1 from '../pages/page1';
-import Page2 from '../pages/page2';
+import Chat from '../pages/chat';
 import NotFound from '../pages/not-found';
 
 class Main extends React.Component {
@@ -15,9 +14,8 @@ class Main extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/stock-watch" component={StockWatch} />
+        <Route path="/chat" component={Chat} />
         <Route path="/markdown-edit" component={MarkdownEdit} />
-        <Route path="/page1" component={Page1} />
-        <Route path="/page2" component={Page2} />
         <Route path="*" component={NotFound} />
       </Switch>
     );

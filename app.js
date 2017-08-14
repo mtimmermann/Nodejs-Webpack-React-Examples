@@ -12,6 +12,8 @@ const users = require('./routes/users');
 const api = require('./routes/api');
 
 const app = express();
+const http = require('http').createServer(app);
+const chatIO = require('./server/chat-io')(http);
 
 
 app.use(compression());
@@ -61,5 +63,9 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(port);
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+//app.listen(port);
+http.listen(port);
 console.log('Server started on port ' + port);
