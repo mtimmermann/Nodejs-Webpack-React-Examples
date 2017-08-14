@@ -16,7 +16,7 @@ class UserListDisplay extends React.Component {
     // eslint-disable-next-line prefer-arrow-callback
     const users = this.props.userData.list.filter(function(user) { return user !== curUser; });
     users.forEach((user) => {
-      userRows.push(<li>{user}</li>);
+      userRows.push(<li key={user}>{user}</li>);
     });
     return (
       <div className="user-list-info">

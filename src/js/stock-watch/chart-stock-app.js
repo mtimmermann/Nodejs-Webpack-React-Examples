@@ -1,8 +1,8 @@
 import Highcharts from 'highcharts/highstock';
-import appChartTheme from '../../js/stock-watch/high-chart-theme';
+import chartAppTheme from '../../js/stock-watch/chart-stock-app-theme';
 import chartService from '../../js/stock-watch/chart-stock-service';
 
-const chartApp = $.extend(appChartTheme,
+const chartApp = $.extend(chartAppTheme, // Extend the chartAppTheme
   (function () {
 
     let stockList = []; // e.g. { stockCode: 'GOOG', companyName 'Alphabet Inc (GOOG)' }
