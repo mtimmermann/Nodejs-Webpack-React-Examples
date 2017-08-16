@@ -5,7 +5,7 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:js": "eslint webpack.**.js --ext .js --ext .jsx src --cache",
+    "lint": "eslint webpack.**.js --ext .js --ext .jsx src --cache",
     "lint:table": "eslint webpack.**.js --ext .js --ext .jsx src --cache --format table || true",
     "lint:server": "eslint app.js routes/*.js",
     "watch": "webpack --watch --progress",

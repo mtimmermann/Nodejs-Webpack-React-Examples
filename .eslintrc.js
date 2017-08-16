@@ -32,6 +32,7 @@ module.exports = {
     'no-console': 0,
     'prefer-template': ['off'],
     'space-infix-ops': ['off'],
+    'no-trailing-spaces': ['error'],
 
     //'import/extensions': ['.jsx'],
 
